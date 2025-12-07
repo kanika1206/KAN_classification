@@ -1,0 +1,451 @@
+ConvNeXtKAN(
+  (convnext): ConvNeXt(
+    (features): Sequential(
+      (0): Conv2dNormActivation(
+        (0): Conv2d(3, 96, kernel_size=(4, 4), stride=(4, 4))
+        (1): LayerNorm2d((96,), eps=1e-06, elementwise_affine=True)
+      )
+      (1): Sequential(
+        (0): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+            (1): Permute()
+            (2): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=96, out_features=384, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=384, out_features=96, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.0, mode=row)
+        )
+        (1): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+            (1): Permute()
+            (2): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=96, out_features=384, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=384, out_features=96, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.0058823529411764705, mode=row)
+        )
+        (2): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+            (1): Permute()
+            (2): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=96, out_features=384, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=384, out_features=96, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.011764705882352941, mode=row)
+        )
+      )
+      (2): Sequential(
+        (0): LayerNorm2d((96,), eps=1e-06, elementwise_affine=True)
+        (1): Conv2d(96, 192, kernel_size=(2, 2), stride=(2, 2))
+      )
+      (3): Sequential(
+        (0): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+            (1): Permute()
+            (2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=192, out_features=768, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=768, out_features=192, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.017647058823529415, mode=row)
+        )
+        (1): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+            (1): Permute()
+            (2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=192, out_features=768, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=768, out_features=192, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.023529411764705882, mode=row)
+        )
+        (2): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+            (1): Permute()
+            (2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=192, out_features=768, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=768, out_features=192, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.029411764705882353, mode=row)
+        )
+      )
+      (4): Sequential(
+        (0): LayerNorm2d((192,), eps=1e-06, elementwise_affine=True)
+        (1): Conv2d(192, 384, kernel_size=(2, 2), stride=(2, 2))
+      )
+      (5): Sequential(
+        (0): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.03529411764705883, mode=row)
+        )
+        (1): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.0411764705882353, mode=row)
+        )
+        (2): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.047058823529411764, mode=row)
+        )
+        (3): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.052941176470588235, mode=row)
+        )
+        (4): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.058823529411764705, mode=row)
+        )
+        (5): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.06470588235294118, mode=row)
+        )
+        (6): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.07058823529411766, mode=row)
+        )
+        (7): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.07647058823529412, mode=row)
+        )
+        (8): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+            (1): Permute()
+            (2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=384, out_features=1536, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=1536, out_features=384, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.0823529411764706, mode=row)
+        )
+      )
+      (6): Sequential(
+        (0): LayerNorm2d((384,), eps=1e-06, elementwise_affine=True)
+        (1): Conv2d(384, 768, kernel_size=(2, 2), stride=(2, 2))
+      )
+      (7): Sequential(
+        (0): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+            (1): Permute()
+            (2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=768, out_features=3072, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=3072, out_features=768, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.08823529411764706, mode=row)
+        )
+        (1): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+            (1): Permute()
+            (2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=768, out_features=3072, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=3072, out_features=768, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.09411764705882353, mode=row)
+        )
+        (2): CNBlock(
+          (block): Sequential(
+            (0): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+            (1): Permute()
+            (2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+            (3): Linear(in_features=768, out_features=3072, bias=True)
+            (4): GELU(approximate='none')
+            (5): Linear(in_features=3072, out_features=768, bias=True)
+            (6): Permute()
+          )
+          (stochastic_depth): StochasticDepth(p=0.1, mode=row)
+        )
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=1)
+    (classifier): Identity()
+  )
+  (kan1): KANLinear(
+    (base_activation): SiLU()
+  )
+  (kan2): KANLinear(
+    (base_activation): SiLU()
+  )
+)
+kan1.base_weight: 196608
+kan1.spline_weight: 1572864
+kan1.spline_scaler: 196608
+kan2.base_weight: 2560
+kan2.spline_weight: 20480
+kan2.spline_scaler: 2560
+Total trainable parameters: 1991680
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 96, 56, 56]           4,704
+       LayerNorm2d-2           [-1, 96, 56, 56]             192
+            Conv2d-3           [-1, 96, 56, 56]           4,800
+           Permute-4           [-1, 56, 56, 96]               0
+         LayerNorm-5           [-1, 56, 56, 96]             192
+            Linear-6          [-1, 56, 56, 384]          37,248
+              GELU-7          [-1, 56, 56, 384]               0
+            Linear-8           [-1, 56, 56, 96]          36,960
+           Permute-9           [-1, 96, 56, 56]               0
+  StochasticDepth-10           [-1, 96, 56, 56]               0
+          CNBlock-11           [-1, 96, 56, 56]               0
+           Conv2d-12           [-1, 96, 56, 56]           4,800
+          Permute-13           [-1, 56, 56, 96]               0
+        LayerNorm-14           [-1, 56, 56, 96]             192
+           Linear-15          [-1, 56, 56, 384]          37,248
+             GELU-16          [-1, 56, 56, 384]               0
+           Linear-17           [-1, 56, 56, 96]          36,960
+          Permute-18           [-1, 96, 56, 56]               0
+  StochasticDepth-19           [-1, 96, 56, 56]               0
+          CNBlock-20           [-1, 96, 56, 56]               0
+           Conv2d-21           [-1, 96, 56, 56]           4,800
+          Permute-22           [-1, 56, 56, 96]               0
+        LayerNorm-23           [-1, 56, 56, 96]             192
+           Linear-24          [-1, 56, 56, 384]          37,248
+             GELU-25          [-1, 56, 56, 384]               0
+           Linear-26           [-1, 56, 56, 96]          36,960
+          Permute-27           [-1, 96, 56, 56]               0
+  StochasticDepth-28           [-1, 96, 56, 56]               0
+          CNBlock-29           [-1, 96, 56, 56]               0
+      LayerNorm2d-30           [-1, 96, 56, 56]             192
+           Conv2d-31          [-1, 192, 28, 28]          73,920
+           Conv2d-32          [-1, 192, 28, 28]           9,600
+          Permute-33          [-1, 28, 28, 192]               0
+        LayerNorm-34          [-1, 28, 28, 192]             384
+           Linear-35          [-1, 28, 28, 768]         148,224
+             GELU-36          [-1, 28, 28, 768]               0
+           Linear-37          [-1, 28, 28, 192]         147,648
+          Permute-38          [-1, 192, 28, 28]               0
+  StochasticDepth-39          [-1, 192, 28, 28]               0
+          CNBlock-40          [-1, 192, 28, 28]               0
+           Conv2d-41          [-1, 192, 28, 28]           9,600
+          Permute-42          [-1, 28, 28, 192]               0
+        LayerNorm-43          [-1, 28, 28, 192]             384
+           Linear-44          [-1, 28, 28, 768]         148,224
+             GELU-45          [-1, 28, 28, 768]               0
+           Linear-46          [-1, 28, 28, 192]         147,648
+          Permute-47          [-1, 192, 28, 28]               0
+  StochasticDepth-48          [-1, 192, 28, 28]               0
+          CNBlock-49          [-1, 192, 28, 28]               0
+           Conv2d-50          [-1, 192, 28, 28]           9,600
+          Permute-51          [-1, 28, 28, 192]               0
+        LayerNorm-52          [-1, 28, 28, 192]             384
+           Linear-53          [-1, 28, 28, 768]         148,224
+             GELU-54          [-1, 28, 28, 768]               0
+           Linear-55          [-1, 28, 28, 192]         147,648
+          Permute-56          [-1, 192, 28, 28]               0
+  StochasticDepth-57          [-1, 192, 28, 28]               0
+          CNBlock-58          [-1, 192, 28, 28]               0
+      LayerNorm2d-59          [-1, 192, 28, 28]             384
+           Conv2d-60          [-1, 384, 14, 14]         295,296
+           Conv2d-61          [-1, 384, 14, 14]          19,200
+          Permute-62          [-1, 14, 14, 384]               0
+        LayerNorm-63          [-1, 14, 14, 384]             768
+           Linear-64         [-1, 14, 14, 1536]         591,360
+             GELU-65         [-1, 14, 14, 1536]               0
+           Linear-66          [-1, 14, 14, 384]         590,208
+          Permute-67          [-1, 384, 14, 14]               0
+  StochasticDepth-68          [-1, 384, 14, 14]               0
+          CNBlock-69          [-1, 384, 14, 14]               0
+           Conv2d-70          [-1, 384, 14, 14]          19,200
+          Permute-71          [-1, 14, 14, 384]               0
+        LayerNorm-72          [-1, 14, 14, 384]             768
+           Linear-73         [-1, 14, 14, 1536]         591,360
+             GELU-74         [-1, 14, 14, 1536]               0
+           Linear-75          [-1, 14, 14, 384]         590,208
+          Permute-76          [-1, 384, 14, 14]               0
+  StochasticDepth-77          [-1, 384, 14, 14]               0
+          CNBlock-78          [-1, 384, 14, 14]               0
+           Conv2d-79          [-1, 384, 14, 14]          19,200
+          Permute-80          [-1, 14, 14, 384]               0
+        LayerNorm-81          [-1, 14, 14, 384]             768
+           Linear-82         [-1, 14, 14, 1536]         591,360
+             GELU-83         [-1, 14, 14, 1536]               0
+           Linear-84          [-1, 14, 14, 384]         590,208
+          Permute-85          [-1, 384, 14, 14]               0
+  StochasticDepth-86          [-1, 384, 14, 14]               0
+          CNBlock-87          [-1, 384, 14, 14]               0
+           Conv2d-88          [-1, 384, 14, 14]          19,200
+          Permute-89          [-1, 14, 14, 384]               0
+        LayerNorm-90          [-1, 14, 14, 384]             768
+           Linear-91         [-1, 14, 14, 1536]         591,360
+             GELU-92         [-1, 14, 14, 1536]               0
+           Linear-93          [-1, 14, 14, 384]         590,208
+          Permute-94          [-1, 384, 14, 14]               0
+  StochasticDepth-95          [-1, 384, 14, 14]               0
+          CNBlock-96          [-1, 384, 14, 14]               0
+           Conv2d-97          [-1, 384, 14, 14]          19,200
+          Permute-98          [-1, 14, 14, 384]               0
+        LayerNorm-99          [-1, 14, 14, 384]             768
+          Linear-100         [-1, 14, 14, 1536]         591,360
+            GELU-101         [-1, 14, 14, 1536]               0
+          Linear-102          [-1, 14, 14, 384]         590,208
+         Permute-103          [-1, 384, 14, 14]               0
+ StochasticDepth-104          [-1, 384, 14, 14]               0
+         CNBlock-105          [-1, 384, 14, 14]               0
+          Conv2d-106          [-1, 384, 14, 14]          19,200
+         Permute-107          [-1, 14, 14, 384]               0
+       LayerNorm-108          [-1, 14, 14, 384]             768
+          Linear-109         [-1, 14, 14, 1536]         591,360
+            GELU-110         [-1, 14, 14, 1536]               0
+          Linear-111          [-1, 14, 14, 384]         590,208
+         Permute-112          [-1, 384, 14, 14]               0
+ StochasticDepth-113          [-1, 384, 14, 14]               0
+         CNBlock-114          [-1, 384, 14, 14]               0
+          Conv2d-115          [-1, 384, 14, 14]          19,200
+         Permute-116          [-1, 14, 14, 384]               0
+       LayerNorm-117          [-1, 14, 14, 384]             768
+          Linear-118         [-1, 14, 14, 1536]         591,360
+            GELU-119         [-1, 14, 14, 1536]               0
+          Linear-120          [-1, 14, 14, 384]         590,208
+         Permute-121          [-1, 384, 14, 14]               0
+ StochasticDepth-122          [-1, 384, 14, 14]               0
+         CNBlock-123          [-1, 384, 14, 14]               0
+          Conv2d-124          [-1, 384, 14, 14]          19,200
+         Permute-125          [-1, 14, 14, 384]               0
+       LayerNorm-126          [-1, 14, 14, 384]             768
+          Linear-127         [-1, 14, 14, 1536]         591,360
+            GELU-128         [-1, 14, 14, 1536]               0
+          Linear-129          [-1, 14, 14, 384]         590,208
+         Permute-130          [-1, 384, 14, 14]               0
+ StochasticDepth-131          [-1, 384, 14, 14]               0
+         CNBlock-132          [-1, 384, 14, 14]               0
+          Conv2d-133          [-1, 384, 14, 14]          19,200
+         Permute-134          [-1, 14, 14, 384]               0
+       LayerNorm-135          [-1, 14, 14, 384]             768
+          Linear-136         [-1, 14, 14, 1536]         591,360
+            GELU-137         [-1, 14, 14, 1536]               0
+          Linear-138          [-1, 14, 14, 384]         590,208
+         Permute-139          [-1, 384, 14, 14]               0
+ StochasticDepth-140          [-1, 384, 14, 14]               0
+         CNBlock-141          [-1, 384, 14, 14]               0
+     LayerNorm2d-142          [-1, 384, 14, 14]             768
+          Conv2d-143            [-1, 768, 7, 7]       1,180,416
+          Conv2d-144            [-1, 768, 7, 7]          38,400
+         Permute-145            [-1, 7, 7, 768]               0
+       LayerNorm-146            [-1, 7, 7, 768]           1,536
+          Linear-147           [-1, 7, 7, 3072]       2,362,368
+            GELU-148           [-1, 7, 7, 3072]               0
+          Linear-149            [-1, 7, 7, 768]       2,360,064
+         Permute-150            [-1, 768, 7, 7]               0
+ StochasticDepth-151            [-1, 768, 7, 7]               0
+         CNBlock-152            [-1, 768, 7, 7]               0
+          Conv2d-153            [-1, 768, 7, 7]          38,400
+         Permute-154            [-1, 7, 7, 768]               0
+       LayerNorm-155            [-1, 7, 7, 768]           1,536
+          Linear-156           [-1, 7, 7, 3072]       2,362,368
+            GELU-157           [-1, 7, 7, 3072]               0
+          Linear-158            [-1, 7, 7, 768]       2,360,064
+         Permute-159            [-1, 768, 7, 7]               0
+ StochasticDepth-160            [-1, 768, 7, 7]               0
+         CNBlock-161            [-1, 768, 7, 7]               0
+          Conv2d-162            [-1, 768, 7, 7]          38,400
+         Permute-163            [-1, 7, 7, 768]               0
+       LayerNorm-164            [-1, 7, 7, 768]           1,536
+          Linear-165           [-1, 7, 7, 3072]       2,362,368
+            GELU-166           [-1, 7, 7, 3072]               0
+          Linear-167            [-1, 7, 7, 768]       2,360,064
+         Permute-168            [-1, 768, 7, 7]               0
+ StochasticDepth-169            [-1, 768, 7, 7]               0
+         CNBlock-170            [-1, 768, 7, 7]               0
+AdaptiveAvgPool2d-171            [-1, 768, 1, 1]               0
+        Identity-172            [-1, 768, 1, 1]               0
+        ConvNeXt-173            [-1, 768, 1, 1]               0
+            SiLU-174                  [-1, 768]               0
+       KANLinear-175                  [-1, 256]               0
+            SiLU-176                  [-1, 256]               0
+       KANLinear-177                   [-1, 10]               0
+================================================================
+Total params: 27,811,968
+Trainable params: 0
+Non-trainable params: 27,811,968
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 256.13
+Params size (MB): 106.09
+Estimated Total Size (MB): 362.80
+----------------------------------------------------------------

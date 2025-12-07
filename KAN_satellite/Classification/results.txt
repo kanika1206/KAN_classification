@@ -1,0 +1,119 @@
+KCN
+
+Test Loss: 0.1039
+Accuracy: 96.62%
+Classification Report:
+                      precision    recall  f1-score   support
+
+          AnnualCrop       0.97      0.96      0.96       900
+              Forest       0.98      0.99      0.99       900
+HerbaceousVegetation       0.94      0.98      0.96       900
+             Highway       0.96      0.91      0.94       750
+          Industrial       0.97      1.00      0.98       750
+             Pasture       0.98      0.94      0.96       600
+       PermanentCrop       0.95      0.94      0.95       750
+         Residential       0.99      0.99      0.99       900
+               River       0.91      0.96      0.93       750
+             SeaLake       1.00      0.97      0.99       900
+
+            accuracy                           0.97      8100
+           macro avg       0.97      0.96      0.96      8100
+        weighted avg       0.97      0.97      0.97      8100
+
+
+
+ConvNext
+
+Test Loss: 0.1182
+Accuracy: 96.21%
+Classification Report:
+                      precision    recall  f1-score   support
+
+          AnnualCrop       0.97      0.95      0.96       900
+              Forest       0.97      1.00      0.98       900
+HerbaceousVegetation       0.96      0.95      0.95       900
+             Highway       0.96      0.93      0.94       750
+          Industrial       0.97      1.00      0.98       750
+             Pasture       0.96      0.94      0.95       600
+       PermanentCrop       0.93      0.94      0.94       750
+         Residential       0.99      0.99      0.99       900
+               River       0.90      0.95      0.93       750
+             SeaLake       1.00      0.96      0.98       900
+
+            accuracy                           0.96      8100
+           macro avg       0.96      0.96      0.96      8100
+        weighted avg       0.96      0.96      0.96      8100
+
+
+VGG16
+
+Test Loss: 0.2360
+Accuracy: 93.26%
+Classification Report:
+                      precision    recall  f1-score   support
+
+          AnnualCrop       0.95      0.94      0.94       900
+              Forest       0.97      0.99      0.98       900
+HerbaceousVegetation       0.87      0.96      0.92       900
+             Highway       0.87      0.84      0.86       750
+          Industrial       0.95      0.97      0.96       750
+             Pasture       0.89      0.95      0.92       600
+       PermanentCrop       0.94      0.79      0.86       750
+         Residential       0.98      0.96      0.97       900
+               River       0.88      0.90      0.89       750
+             SeaLake       0.99      0.99      0.99       900
+
+            accuracy                           0.93      8100
+           macro avg       0.93      0.93      0.93      8100
+        weighted avg       0.93      0.93      0.93      8100
+
+
+
+VGG_KAN
+
+Test Loss: 0.1766
+Accuracy: 94.12%
+Classification Report:
+                      precision    recall  f1-score   support
+
+          AnnualCrop       0.94      0.94      0.94       900
+              Forest       0.99      0.97      0.98       900
+HerbaceousVegetation       0.93      0.93      0.93       900
+             Highway       0.89      0.87      0.88       750
+          Industrial       0.94      0.98      0.96       750
+             Pasture       0.92      0.96      0.94       600
+       PermanentCrop       0.89      0.92      0.91       750
+         Residential       0.99      0.96      0.98       900
+               River       0.91      0.89      0.90       750
+             SeaLake       0.99      0.98      0.99       900
+
+            accuracy                           0.94      8100
+           macro avg       0.94      0.94      0.94      8100
+        weighted avg       0.94      0.94      0.94      8100
+
+
+
+ViTKAN
+
+Test Loss: 0.1111
+Accuracy: 96.27%
+Classification Report:
+                      precision    recall  f1-score   support
+
+          AnnualCrop       0.95      0.98      0.96       900
+              Forest       0.98      0.99      0.99       900
+HerbaceousVegetation       0.95      0.97      0.96       900
+             Highway       0.91      0.97      0.94       750
+          Industrial       0.98      0.97      0.97       750
+             Pasture       0.99      0.92      0.95       600
+       PermanentCrop       0.96      0.91      0.93       750
+         Residential       0.99      0.99      0.99       900
+               River       0.94      0.92      0.93       750
+             SeaLake       0.99      0.99      0.99       900
+
+            accuracy                           0.96      8100
+           macro avg       0.96      0.96      0.96      8100
+        weighted avg       0.96      0.96      0.96      8100
+
+
+
